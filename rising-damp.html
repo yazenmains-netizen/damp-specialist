@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rising Damp | What It Is & How We Diagnose It</title>
+  <meta name="description" content="Everything homeowners need to know about rising damp — causes, signs, how a qualified surveyor diagnoses it, and what remedial options typically exist." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --orange: #e87322; --orange-dark: #c95f10; --orange-pale: #fff4ec;
+      --navy: #0d1f3c; --white: #ffffff; --off-white: #f7f8fa;
+      --gray-100: #eef0f3; --gray-200: #dde1e8; --gray-400: #9aa5b4;
+      --gray-600: #4f5e73; --text: #0d1b2e;
+      --shadow: 0 2px 16px rgba(13,31,60,.08); --shadow-lg: 0 8px 40px rgba(13,31,60,.14);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+
+    nav { position: fixed; top: 0; width: 100%; z-index: 999; background: var(--white); border-bottom: 1px solid var(--gray-200); box-shadow: 0 1px 12px rgba(13,31,60,.07); }
+    .nav-inner { max-width: 1180px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 70px; }
+    .nav-logo { display: flex; align-items: center; justify-content: center; text-decoration: none; overflow: hidden; height: 70px; }
+    .nav-logo img { height: 88px; width: auto; object-fit: contain; flex-shrink: 0; }
+    
+    .nav-back { display: flex; align-items: center; gap: 7px; color: var(--gray-600); text-decoration: none; font-size: .88rem; font-weight: 600; transition: color .2s; }
+    .nav-back:hover { color: var(--orange); }
+    .nav-cta { background: var(--orange); color: var(--white); padding: 10px 22px; border-radius: 10px; font-weight: 700; font-size: .88rem; text-decoration: none; transition: background .2s; }
+    .nav-cta:hover { background: var(--orange-dark); }
+
+    /* HERO */
+    .page-hero { padding-top: 70px; position: relative; overflow: hidden; }
+    .hero-img-wrap { width: 100%; height: 480px; position: relative; }
+    .hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(13,31,60,.85) 0%, rgba(13,31,60,.4) 60%, transparent 100%); }
+    .hero-text { position: absolute; inset: 0; display: flex; align-items: center; padding: 0 60px; max-width: 700px; }
+    .hero-inner-text { }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+    .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; font-size: .8rem; transition: color .2s; }
+    .breadcrumb a:hover { color: var(--orange); }
+    .breadcrumb span { color: rgba(255,255,255,.4); font-size: .8rem; }
+    .page-hero h1 { font-family: 'Manrope', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: white; line-height: 1.15; margin-bottom: 14px; }
+    .page-hero p { color: rgba(255,255,255,.75); font-size: 1.05rem; max-width: 520px; margin-bottom: 24px; }
+    .hero-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+    .hero-tag { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); color: white; padding: 5px 14px; border-radius: 100px; font-size: .78rem; font-weight: 600; }
+
+    /* LAYOUT */
+    .page-body { max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: grid; grid-template-columns: 1fr 320px; gap: 60px; align-items: start; }
+    .main-content h2 { font-family: 'Manrope', sans-serif; font-size: 1.7rem; font-weight: 900; color: var(--navy); margin: 40px 0 14px; }
+    .main-content h2:first-child { margin-top: 0; }
+    .main-content h3 { font-family: 'Manrope', sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--navy); margin: 24px 0 10px; }
+    .main-content p { color: var(--gray-600); font-size: .95rem; line-height: 1.75; margin-bottom: 16px; }
+    .main-content ul, .main-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .main-content li { color: var(--gray-600); font-size: .93rem; line-height: 1.7; margin-bottom: 7px; }
+    .divider { border: none; border-top: 1px solid var(--gray-200); margin: 36px 0; }
+
+    .info-box { background: var(--orange-pale); border: 1px solid rgba(232,115,34,.25); border-left: 4px solid var(--orange); border-radius: 10px; padding: 20px 22px; margin: 24px 0; }
+    .info-box h4 { font-weight: 800; color: var(--navy); margin-bottom: 7px; font-size: .95rem; }
+    .info-box p { color: var(--gray-600); font-size: .88rem; margin: 0; }
+
+    .warning-box { background: #fff8e6; border: 1px solid #f5c842; border-left: 4px solid #f5c842; border-radius: 10px; padding: 20px 22px; margin: 24px 0; }
+    .warning-box h4 { font-weight: 800; color: var(--navy); margin-bottom: 7px; font-size: .95rem; }
+    .warning-box p { color: var(--gray-600); font-size: .88rem; margin: 0; }
+
+    .step-list { list-style: none; padding: 0; counter-reset: steps; }
+    .step-list li { counter-increment: steps; display: flex; gap: 16px; align-items: flex-start; margin-bottom: 20px; padding: 18px 20px; background: var(--off-white); border-radius: 12px; }
+    .step-list li::before { content: counter(steps); min-width: 32px; height: 32px; background: var(--orange); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: .88rem; flex-shrink: 0; }
+    .step-list li .step-text h4 { font-weight: 700; color: var(--navy); margin-bottom: 4px; font-size: .93rem; }
+    .step-list li .step-text p { color: var(--gray-600); font-size: .86rem; margin: 0; }
+
+    .signs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+    .sign-card { background: var(--off-white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 10px; }
+    .sign-card .icon { font-size: 1.4rem; flex-shrink: 0; }
+    .sign-card h5 { font-weight: 700; color: var(--navy); font-size: .88rem; margin-bottom: 3px; }
+    .sign-card p { color: var(--gray-600); font-size: .8rem; margin: 0; }
+
+    /* SIDEBAR */
+    .sidebar { position: sticky; top: 90px; display: flex; flex-direction: column; gap: 20px; }
+    .sidebar-cta { background: var(--orange); border-radius: 16px; padding: 28px; text-align: center; }
+    .sidebar-cta h4 { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 1.1rem; color: white; margin-bottom: 8px; }
+    .sidebar-cta p { color: rgba(255,255,255,.75); font-size: .84rem; margin-bottom: 18px; }
+    .sidebar-cta a { display: block; background: white; color: var(--orange); padding: 12px 20px; border-radius: 8px; font-weight: 700; font-size: .9rem; text-decoration: none; margin-bottom: 10px; }
+    .sidebar-cta a:hover { background: var(--orange-pale); }
+    .sidebar-cta .phone { background: var(--orange-dark); border: 2px solid var(--orange-dark); color: white; margin-bottom: 0; }
+    .sidebar-cta .phone:hover { background: var(--orange); border-color: var(--orange); }
+    .sidebar-card { background: var(--off-white); border: 1px solid var(--gray-200); border-radius: 14px; padding: 22px; }
+    .sidebar-card h4 { font-weight: 800; color: var(--navy); font-size: .95rem; margin-bottom: 14px; }
+    .sidebar-links { list-style: none; }
+    .sidebar-links li { margin-bottom: 10px; }
+    .sidebar-links a { color: var(--orange); text-decoration: none; font-size: .88rem; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+    .sidebar-links a:hover { color: var(--orange-dark); }
+    .sidebar-facts { list-style: none; }
+    .sidebar-facts li { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--gray-200); font-size: .84rem; }
+    .sidebar-facts li:last-child { border-bottom: none; }
+    .sidebar-facts .label { color: var(--gray-600); }
+    .sidebar-facts .value { font-weight: 700; color: var(--navy); }
+
+    /* RELATED */
+    .related-section { background: var(--off-white); padding: 72px 24px; }
+    .related-inner { max-width: 1180px; margin: 0 auto; }
+    .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 36px; }
+    .related-card { background: var(--white); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); text-decoration: none; transition: transform .25s, box-shadow .25s; display: block; }
+    .related-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .related-card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+    .related-body { padding: 20px; }
+    .related-body h4 { font-family: 'Manrope', sans-serif; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .related-body p { color: var(--gray-600); font-size: .85rem; line-height: 1.6; }
+    .related-body .link { color: var(--orange); font-size: .83rem; font-weight: 700; margin-top: 10px; display: block; }
+
+    footer { background: var(--navy); padding: 40px 24px 28px; text-align: center; }
+    footer p { color: rgba(255,255,255,.35); font-size: .8rem; }
+
+    @media (max-width: 860px) {
+      .page-body { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .hero-text { padding: 0 30px; }
+      .signs-grid { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .hero-img-wrap { height: 360px; }
+      .page-body { padding: 48px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index2.html" class="nav-logo">
+      <img src="Dump Specialist logo.jpeg" alt="Damp Specialist" />
+
+    </a>
+    <a href="index2.html" class="nav-back">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Back to Home
+    </a>
+    <a href="index2.html#contact" class="nav-cta">Book a Survey</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="hero-img-wrap">
+    <img src="rising damp.jpg" alt="Rising damp on internal wall" />
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <div class="hero-inner-text">
+        <div class="breadcrumb">
+          <a href="index2.html">Home</a>
+          <span>›</span>
+          <span style="color:rgba(255,255,255,.8);">Rising Damp</span>
+        </div>
+        <h1>Rising Damp</h1>
+        <p>A complete guide for homeowners — what it is, how to spot it, and how we diagnose and treat it properly.</p>
+        <div class="hero-tags">
+          <span class="hero-tag">Structural Damp</span>
+          <span class="hero-tag">Failed DPC</span>
+          <span class="hero-tag">Groundwater</span>
+          <span class="hero-tag">Chemical Injection</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-body">
+  <div class="main-content">
+
+    <h2>What Is Rising Damp?</h2>
+    <p>Rising damp is a form of structural dampness caused by groundwater travelling upwards through porous building materials — typically masonry, brick, and mortar. This happens through a process called <strong>capillary action</strong>, where water is drawn up through tiny pores and channels in the wall, much like a sponge absorbing water.</p>
+    <p>Under normal circumstances, a <strong>damp proof course (DPC)</strong> — a horizontal barrier built into the base of every wall — prevents this moisture from rising. However, in older properties this layer may be absent, degraded, or bridged by raised soil or render levels, allowing moisture to travel freely up the wall.</p>
+
+    <div class="info-box">
+      <h4>Did You Know?</h4>
+      <p>Rising damp is most common in properties built before 1920, when lead or slate DPC materials were used and have since deteriorated. Modern buildings use impermeable plastic DPCs that don't degrade, but can still be bridged by external render, soil, or debris.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Signs of Rising Damp</h2>
+    <p>Rising damp has several distinctive signs that distinguish it from other types of moisture problems. The pattern of damage is quite specific because the water always travels upward from ground level:</p>
+
+    <div class="signs-grid">
+      <div class="sign-card"><div><h5>Tide-Mark Staining</h5><p>A horizontal stain on the lower 0.5–1m of the wall, often yellow-brown in colour, showing the highest point the moisture reached.</p></div></div>
+      <div class="sign-card"><div><h5>White Salt Deposits</h5><p>Fluffy white crystalline deposits on the wall surface — salts left behind as water evaporates. A strong indicator of rising moisture.</p></div></div>
+      <div class="sign-card"><div><h5>Peeling Wallpaper & Paint</h5><p>Wallpaper bubbling or lifting at the skirting board, and paint blistering at low level. Often the first visible sign homeowners notice.</p></div></div>
+      <div class="sign-card"><div><h5>Crumbling Plaster</h5><p>Plaster at low level becomes soft, powdery, or falls away entirely — especially behind skirting boards.</p></div></div>
+      <div class="sign-card"><div><h5>Damp, Musty Smell</h5><p>A persistent earthy or musty smell in rooms — especially noticeable in winter or after rainfall when conditions drive more moisture upward.</p></div></div>
+      <div class="sign-card"><div><h5>Rotting Skirting Boards</h5><p>Timber skirting boards in contact with damp masonry can begin to decay — a warning sign of long-standing moisture problems.</p></div></div>
+    </div>
+
+    <div class="warning-box">
+      <h4>Don't Confuse with Condensation</h4>
+      <p>Rising damp is frequently misdiagnosed. Condensation and penetrating damp can produce similar visual symptoms. Only a calibrated moisture meter survey, combined with a trained surveyor's assessment, can confirm rising damp. Be cautious of any contractor who diagnoses rising damp without conducting a proper survey — incorrect treatment is expensive and won't solve the problem.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>What Causes Rising Damp?</h2>
+    <p>Understanding the cause is essential — it determines what remedial work will actually fix the problem. The most common causes we identify during surveys include:</p>
+    <ul>
+      <li><strong>Failed or absent DPC:</strong> In properties built before the early 1900s, no DPC was installed. In others, the original lead or slate DPC has deteriorated over time.</li>
+      <li><strong>Bridged DPC:</strong> Even a perfectly intact DPC can be bypassed if external render, paving, or soil has been raised above it — allowing water to cross the barrier.</li>
+      <li><strong>Defective DPC:</strong> Physical gaps in a DPC — caused by settlement, movement, or poor installation — allow moisture to bypass the barrier at specific points.</li>
+      <li><strong>High ground levels:</strong> Where the external ground level sits above the internal floor level, hydrostatic pressure drives moisture through the wall regardless of the DPC.</li>
+    </ul>
+
+    <hr class="divider" />
+
+    <h2>How We Diagnose Rising Damp</h2>
+    <p>Accurate diagnosis is the most important step — and it's where many cheaper surveys fail homeowners. Our CSTDB-qualified surveyors follow a rigorous process:</p>
+
+    <ol class="step-list">
+      <li><div class="step-text"><h4>Initial Assessment</h4><p>We inspect the internal and external property, looking at wall heights, ground levels, render levels, drainage, and any obvious DPC bridging that might explain moisture entry.</p></div></li>
+      <li><div class="step-text"><h4>Calibrated Moisture Meter Survey</h4><p>We use a professional-grade calibrated moisture meter to map moisture readings across the affected wall at multiple heights. This distinguishes true rising damp (readings high at low level, diminishing higher up) from penetrating damp or condensation.</p></div></li>
+      <li><div class="step-text"><h4>Salt Analysis</h4><p>We test for hygroscopic salts — the mineral deposits left by rising groundwater. Their presence confirms that moisture is travelling through the masonry from below, not from another source.</p></div></li>
+      <li><div class="step-text"><h4>Written Report</h4><p>You receive a clear written report with our findings, photographs, the confirmed diagnosis, and clear recommendations for what remedial works are required. No jargon — just honest, actionable information.</p></div></li>
+    </ol>
+
+    <hr class="divider" />
+
+    <h2>What Our Report Covers</h2>
+    <p>Our rising damp survey report gives you everything you need to understand the problem and commission the right contractor to fix it:</p>
+    <ul>
+      <li>Confirmation of whether rising damp is genuinely present (many suspected cases turn out to be condensation or penetrating damp)</li>
+      <li>The likely cause — failed DPC, bridged DPC, absent DPC, or high external ground levels</li>
+      <li>Moisture meter readings mapped across the affected wall at multiple heights</li>
+      <li>Salt analysis results confirming groundwater involvement</li>
+      <li>Photographic evidence of all affected areas</li>
+      <li>Clear specification of the remedial works required, including the standard expected (BS 6576 for chemical DPC installation)</li>
+      <li>Guidance on what to look for when obtaining quotes from remedial contractors</li>
+    </ul>
+
+    <div class="info-box">
+      <h4>Why an Independent Survey Protects You</h4>
+      <p>Many damp proofing contractors offer "free" surveys — but they profit from the works they recommend. An independent survey from a company that carries out no works means you get an unbiased diagnosis. You can then use our report to obtain competitive quotes from contractors, knowing the specification is correct.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>What Remedial Works Are Typically Required?</h2>
+    <p>Once our survey confirms rising damp, the remedial contractor you appoint would typically carry out the following works (which we specify in detail in our report):</p>
+
+    <h3>Chemical Damp Proof Course Injection</h3>
+    <p>A water-repellent cream or fluid is injected into holes drilled at low level in the affected wall. The chemical disperses through the masonry, creating an impermeable barrier that stops capillary action — as effective as a physical barrier without the need to remove masonry.</p>
+
+    <h3>Plaster Removal & Salt-Resistant Re-plastering</h3>
+    <p>The existing plaster must be removed and replaced — it will be contaminated with hygroscopic salts that continue to attract moisture even after the DPC is installed. Specialist renovation plaster is used to neutralise residual salts and allow the wall to breathe.</p>
+
+    <h3>External Bridging Correction</h3>
+    <p>Where ground levels, render, or paving are bridging the DPC, these must be addressed — otherwise the new DPC will simply be bypassed again. Our report identifies any bridging that needs resolving.</p>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-cta">
+      <h4>Think You Have Rising Damp?</h4>
+      <p>Book a survey with a CSTDB-qualified surveyor.</p>
+      <a href="index2.html#contact">Book a Survey</a>
+      <a href="tel:01213456789" class="phone">0121 345 6789</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Quick Facts</h4>
+      <ul class="sidebar-facts">
+        <li><span class="label">Affects</span><span class="value">Lower 0–1m of wall</span></li>
+        <li><span class="label">Common in</span><span class="value">Pre-1920 properties</span></li>
+        <li><span class="label">Cause</span><span class="value">Failed or absent DPC</span></li>
+        <li><span class="label">Typical remedy</span><span class="value">Chemical DPC injection</span></li>
+        <li><span class="label">Survey turnaround</span><span class="value">Report within 48 hrs</span></li>
+        <li><span class="label">We carry out works?</span><span class="value">No — survey only</span></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Other Types of Damp</h4>
+      <ul class="sidebar-links">
+        <li><a href="penetrating-damp.html">→ Penetrating Damp</a></li>
+        <li><a href="condensation.html">→ Condensation &amp; Mould</a></li>
+        <li><a href="index2.html#services">→ All Our Services</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<div class="related-section">
+  <div class="related-inner">
+    <h2 style="font-family:'Manrope',sans-serif;font-weight:900;color:var(--navy);font-size:1.6rem;margin-bottom:8px;">Other Types of Damp</h2>
+    <p style="color:var(--gray-600);font-size:.93rem;">Not sure it's rising damp? Read about the other main types.</p>
+    <div class="related-grid">
+      <a href="penetrating-damp.html" class="related-card">
+        <img src="damp rear .webp" alt="Penetrating damp" />
+        <div class="related-body">
+          <h4>Penetrating Damp</h4>
+          <p>Water entering through defects in the building fabric — failed pointing, cracked render, blocked gutters or faulty flashings.</p>
+          <span class="link">Read the guide →</span>
+        </div>
+      </a>
+      <a href="condensation.html" class="related-card">
+        <img src="condensation.webp" alt="Condensation damp" />
+        <div class="related-body">
+          <h4>Condensation &amp; Mould</h4>
+          <p>The most common form — warm moist air meeting cold surfaces. Often misdiagnosed as structural damp.</p>
+          <span class="link">Read the guide →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Damp Specialist · PCA Member · CSTDB Qualified · Independent Survey Reports · <a href="index2.html" style="color:var(--orange);text-decoration:none;">Back to Home</a></p>
+</footer>
+
+</body>
+</html>

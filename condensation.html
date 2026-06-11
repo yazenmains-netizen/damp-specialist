@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Condensation & Mould | What It Is & How We Diagnose It</title>
+  <meta name="description" content="Everything homeowners need to know about condensation damp and black mould — causes, signs, how we diagnose and treat it permanently. Free surveys." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --orange: #e87322; --orange-dark: #c95f10; --orange-pale: #fff4ec;
+      --navy: #0d1f3c; --white: #ffffff; --off-white: #f7f8fa;
+      --gray-100: #eef0f3; --gray-200: #dde1e8; --gray-400: #9aa5b4;
+      --gray-600: #4f5e73; --text: #0d1b2e;
+      --shadow: 0 2px 16px rgba(13,31,60,.08); --shadow-lg: 0 8px 40px rgba(13,31,60,.14);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+    nav { position: fixed; top: 0; width: 100%; z-index: 999; background: var(--white); border-bottom: 1px solid var(--gray-200); box-shadow: 0 1px 12px rgba(13,31,60,.07); }
+    .nav-inner { max-width: 1180px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 70px; }
+    .nav-logo { display: flex; align-items: center; justify-content: center; text-decoration: none; overflow: hidden; height: 70px; }
+    .nav-logo img { height: 88px; width: auto; object-fit: contain; flex-shrink: 0; }
+    
+    .nav-back { display: flex; align-items: center; gap: 7px; color: var(--gray-600); text-decoration: none; font-size: .88rem; font-weight: 600; transition: color .2s; }
+    .nav-back:hover { color: var(--orange); }
+    .nav-cta { background: var(--orange); color: var(--white); padding: 10px 22px; border-radius: 10px; font-weight: 700; font-size: .88rem; text-decoration: none; }
+    .nav-cta:hover { background: var(--orange-dark); }
+    .page-hero { padding-top: 70px; position: relative; overflow: hidden; }
+    .hero-img-wrap { width: 100%; height: 480px; position: relative; }
+    .hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(13,31,60,.88) 0%, rgba(13,31,60,.45) 55%, transparent 100%); }
+    .hero-text { position: absolute; inset: 0; display: flex; align-items: center; padding: 0 60px; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+    .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; font-size: .8rem; }
+    .breadcrumb a:hover { color: var(--orange); }
+    .breadcrumb span { color: rgba(255,255,255,.4); font-size: .8rem; }
+    .page-hero h1 { font-family: 'Manrope', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: white; line-height: 1.15; margin-bottom: 14px; }
+    .page-hero p { color: rgba(255,255,255,.75); font-size: 1.05rem; max-width: 520px; margin-bottom: 24px; }
+    .hero-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+    .hero-tag { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); color: white; padding: 5px 14px; border-radius: 100px; font-size: .78rem; font-weight: 600; }
+    .page-body { max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: grid; grid-template-columns: 1fr 320px; gap: 60px; align-items: start; }
+    .main-content h2 { font-family: 'Manrope', sans-serif; font-size: 1.7rem; font-weight: 900; color: var(--navy); margin: 40px 0 14px; }
+    .main-content h2:first-child { margin-top: 0; }
+    .main-content h3 { font-family: 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--navy); margin: 22px 0 9px; }
+    .main-content p { color: var(--gray-600); font-size: .95rem; line-height: 1.75; margin-bottom: 14px; }
+    .main-content ul { padding-left: 20px; margin-bottom: 14px; }
+    .main-content li { color: var(--gray-600); font-size: .92rem; line-height: 1.7; margin-bottom: 7px; }
+    .divider { border: none; border-top: 1px solid var(--gray-200); margin: 36px 0; }
+    .info-box { background: var(--orange-pale); border: 1px solid rgba(232,115,34,.25); border-left: 4px solid var(--orange); border-radius: 10px; padding: 20px 22px; margin: 22px 0; }
+    .info-box h4 { font-weight: 800; color: var(--navy); margin-bottom: 7px; font-size: .95rem; }
+    .info-box p { color: var(--gray-600); font-size: .88rem; margin: 0; }
+    .health-box { background: #fef2f2; border: 1px solid #fca5a5; border-left: 4px solid #ef4444; border-radius: 10px; padding: 20px 22px; margin: 22px 0; }
+    .health-box h4 { font-weight: 800; color: var(--navy); margin-bottom: 7px; font-size: .95rem; }
+    .health-box p { color: var(--gray-600); font-size: .88rem; margin: 0; }
+    .step-list { list-style: none; padding: 0; counter-reset: steps; }
+    .step-list li { counter-increment: steps; display: flex; gap: 16px; align-items: flex-start; margin-bottom: 18px; padding: 18px 20px; background: var(--off-white); border-radius: 12px; }
+    .step-list li::before { content: counter(steps); min-width: 32px; height: 32px; background: var(--orange); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: .88rem; flex-shrink: 0; }
+    .step-list li .step-text h4 { font-weight: 700; color: var(--navy); margin-bottom: 4px; font-size: .92rem; }
+    .step-list li .step-text p { color: var(--gray-600); font-size: .85rem; margin: 0; }
+    .solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0; }
+    .solution-card { background: var(--off-white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; }
+    .solution-card .icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .solution-card h5 { font-weight: 800; color: var(--navy); font-size: .93rem; margin-bottom: 6px; }
+    .solution-card p { color: var(--gray-600); font-size: .83rem; margin: 0; line-height: 1.6; }
+    .sidebar { position: sticky; top: 90px; display: flex; flex-direction: column; gap: 20px; }
+    .sidebar-cta { background: var(--orange); border-radius: 16px; padding: 28px; text-align: center; }
+    .sidebar-cta h4 { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 1.1rem; color: white; margin-bottom: 8px; }
+    .sidebar-cta p { color: rgba(255,255,255,.75); font-size: .84rem; margin-bottom: 18px; }
+    .sidebar-cta a { display: block; background: white; color: var(--orange); padding: 12px 20px; border-radius: 8px; font-weight: 700; font-size: .9rem; text-decoration: none; margin-bottom: 10px; }
+    .sidebar-cta a:hover { background: var(--orange-pale); }
+    .sidebar-cta .phone { background: var(--orange-dark); border: 2px solid var(--orange-dark); color: white; margin-bottom: 0; }
+    .sidebar-card { background: var(--off-white); border: 1px solid var(--gray-200); border-radius: 14px; padding: 22px; }
+    .sidebar-card h4 { font-weight: 800; color: var(--navy); font-size: .95rem; margin-bottom: 14px; }
+    .sidebar-links { list-style: none; }
+    .sidebar-links li { margin-bottom: 10px; }
+    .sidebar-links a { color: var(--orange); text-decoration: none; font-size: .88rem; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+    .sidebar-facts { list-style: none; }
+    .sidebar-facts li { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--gray-200); font-size: .84rem; }
+    .sidebar-facts li:last-child { border-bottom: none; }
+    .sidebar-facts .label { color: var(--gray-600); }
+    .sidebar-facts .value { font-weight: 700; color: var(--navy); }
+    .related-section { background: var(--off-white); padding: 72px 24px; }
+    .related-inner { max-width: 1180px; margin: 0 auto; }
+    .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 36px; }
+    .related-card { background: var(--white); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); text-decoration: none; transition: transform .25s; display: block; }
+    .related-card:hover { transform: translateY(-3px); }
+    .related-card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+    .related-body { padding: 20px; }
+    .related-body h4 { font-family: 'Manrope', sans-serif; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .related-body p { color: var(--gray-600); font-size: .85rem; line-height: 1.6; }
+    .related-body .link { color: var(--orange); font-size: .83rem; font-weight: 700; margin-top: 10px; display: block; }
+    footer { background: var(--navy); padding: 40px 24px 28px; text-align: center; }
+    footer p { color: rgba(255,255,255,.35); font-size: .8rem; }
+    @media (max-width: 860px) { .page-body { grid-template-columns: 1fr; } .sidebar { position: static; } .hero-text { padding: 0 30px; } .solution-grid { grid-template-columns: 1fr; } .related-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .hero-img-wrap { height: 340px; } .page-body { padding: 48px 20px; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index2.html" class="nav-logo">
+      <img src="Dump Specialist logo.jpeg" alt="Damp Specialist" />
+
+    </a>
+    <a href="index2.html" class="nav-back">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Back to Home
+    </a>
+    <a href="index2.html#contact" class="nav-cta">Book a Survey</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="hero-img-wrap">
+    <img src="condensation.webp" alt="Condensation and mould on wall" />
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <div>
+        <div class="breadcrumb"><a href="index2.html">Home</a><span>›</span><span style="color:rgba(255,255,255,.8);">Condensation &amp; Mould</span></div>
+        <h1>Condensation<br/>&amp; Mould</h1>
+        <p>The most common form of damp in UK homes — and the one most frequently misdiagnosed as structural damp.</p>
+        <div class="hero-tags">
+          <span class="hero-tag">Black Mould</span>
+          <span class="hero-tag">High Humidity</span>
+          <span class="hero-tag">Cold Surfaces</span>
+          <span class="hero-tag">PIV Ventilation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-body">
+  <div class="main-content">
+
+    <h2>What Is Condensation Damp?</h2>
+    <p>Condensation is the most common form of dampness found in UK homes. It occurs when warm, moisture-laden air comes into contact with a cold surface — such as an external wall, window, or ceiling — and the air cools below its <strong>dew point</strong>. At this temperature it can no longer hold its moisture in vapour form, so it deposits it as liquid water on the surface.</p>
+    <p>Over time, persistent surface moisture creates the humid conditions in which <strong>Cladosporium</strong> and other mould spores thrive — the black, green, or grey patches commonly found in corners, on ceilings, and around windows.</p>
+    <p>Condensation is especially common in modern properties with good draught-sealing and insufficient ventilation, and in older properties that have been double-glazed without any improvement to ventilation.</p>
+
+    <div class="info-box">
+      <h4>The Most Misdiagnosed Type of Damp</h4>
+      <p>Condensation and mould is frequently — and incorrectly — diagnosed as rising damp or penetrating damp by untrained contractors. The key difference: rising and penetrating damp require structural treatment; condensation requires humidity control and ventilation. Misdiagnosis leads to expensive, unnecessary work that doesn't solve the problem.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Signs of Condensation Damp</h2>
+    <p>Condensation has several characteristics that distinguish it from structural damp:</p>
+    <ul>
+      <li><strong>Black mould growth</strong> — typically in room corners, on ceiling edges, behind furniture against external walls, and around window frames. The mould is usually at any height, not limited to low level.</li>
+      <li><strong>Streaming windows</strong> — condensation on glass in the morning is a reliable indicator of high indoor humidity overnight.</li>
+      <li><strong>Damp or moist walls to the touch</strong> — external walls feel cold and damp but there is no obvious tide-mark or salt deposit associated with rising damp.</li>
+      <li><strong>Musty, earthy smell throughout the property</strong> — particularly in bedrooms and bathrooms.</li>
+      <li><strong>Damp that's worse in winter</strong> — cold surfaces become colder, the temperature differential increases, and more moisture deposits. In summer, conditions often improve significantly.</li>
+      <li><strong>Mould behind wardrobes and furniture</strong> — still air pockets behind furniture prevent walls from warming up, creating persistent cold spots where condensation pools.</li>
+    </ul>
+
+    <div class="health-box">
+      <h4>🏥 Health Risks of Mould Exposure</h4>
+      <p>Mould spores are a recognised health hazard. The NHS links prolonged mould exposure to increased risk of respiratory infections, worsening of asthma and COPD, allergic reactions, and immune system irritation — particularly dangerous for children, the elderly, and those with pre-existing conditions. Treating the source — not just cleaning the mould surface — is essential.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>What Causes Condensation in Homes?</h2>
+    <p>The two factors driving condensation are <strong>moisture production</strong> and <strong>insufficient ventilation</strong>. Modern living produces enormous quantities of water vapour:</p>
+    <ul>
+      <li>A typical family produces <strong>4–12 litres of moisture per day</strong> through breathing, cooking, bathing, and drying clothes indoors.</li>
+      <li>Double-glazing and draught-proofing improvements seal homes airtight — reducing the natural ventilation that once allowed moisture to escape.</li>
+      <li>Poor insulation creates cold surfaces on external walls, particularly at <strong>thermal bridges</strong> — points where insulation is thin or absent, such as around window reveals, behind skirting boards, and at floor/wall junctions.</li>
+      <li>Extractor fans that are undersized, poorly positioned, or blocked cannot remove enough moisture from kitchens and bathrooms.</li>
+    </ul>
+
+    <hr class="divider" />
+
+    <h2>How We Diagnose Condensation</h2>
+
+    <ol class="step-list">
+      <li><div class="step-text"><h4>Humidity & Temperature Assessment</h4><p>We use a hygrometer to measure relative humidity and air temperature at multiple points throughout the property. We look for elevated humidity readings and identify cold spots where condensation is most likely to occur.</p></div></li>
+      <li><div class="step-text"><h4>Moisture Meter Survey</h4><p>We use a calibrated moisture meter on affected surfaces to confirm surface moisture levels and distinguish between condensation (uniform surface moisture) and rising or penetrating damp (localised deep-seated moisture with a specific pattern).</p></div></li>
+      <li><div class="step-text"><h4>Ventilation Assessment</h4><p>We assess the property's ventilation provision — extractor fans, trickle vents, airbricks, and any existing positive input ventilation systems — and identify where improvements will have the greatest impact.</p></div></li>
+      <li><div class="step-text"><h4>Thermal Bridge Identification</h4><p>We identify specific cold spots in the building fabric — including poorly insulated walls, uninsulated reveals, and areas of thermal bridging — that create the cold surfaces where condensation deposits.</p></div></li>
+      <li><div class="step-text"><h4>Written Report</h4><p>You receive a written report confirming the diagnosis, quantifying the humidity problem, identifying the key causes, and specifying the recommended solutions with fixed pricing.</p></div></li>
+    </ol>
+
+    <hr class="divider" />
+
+    <h2>What Our Report Covers</h2>
+    <p>Our condensation survey gives you a clear, evidenced diagnosis and practical recommendations — so you understand exactly what's causing the problem and what needs to change:</p>
+    <ul>
+      <li>Confirmation that the problem is condensation, not rising or penetrating damp</li>
+      <li>Relative humidity and temperature readings across the property</li>
+      <li>Identification of cold spots and thermal bridging where condensation is worst</li>
+      <li>Assessment of existing ventilation and where it's failing</li>
+      <li>Photographic evidence of mould growth and affected surfaces</li>
+      <li>Clear recommendations for the appropriate ventilation and insulation improvements needed</li>
+      <li>Guidance on lifestyle factors that will support the improvement</li>
+    </ul>
+
+    <div class="info-box">
+      <h4>Why Correct Diagnosis Matters So Much Here</h4>
+      <p>Condensation is the most misdiagnosed form of damp. A contractor who profits from damp proofing works has an incentive to call it rising damp. An independent surveyor doesn't. Our report confirms what type of damp you have before any money is spent on remedial work — protecting you from paying for the wrong solution.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>What Remedial Works Are Typically Recommended?</h2>
+    <p>Our report will specify which of the following solutions is appropriate for your property. The contractor you appoint would then carry out the works:</p>
+
+    <div class="solution-grid">
+      <div class="solution-card">
+        <div class="icon">💨</div>
+        <h5>Positive Input Ventilation (PIV)</h5>
+        <p>A PIV unit draws fresh air from the loft and gently distributes it through the property, pushing humid air out. The most effective whole-home solution — typically installed in half a day with minimal disruption.</p>
+      </div>
+      <div class="solution-card">
+        <div class="icon"></div>
+        <h5>Thermal Boarding</h5>
+        <p>Insulated plasterboard is fixed to cold external walls, raising the surface temperature above the dew point. Particularly effective where persistent mould appears at low level or on chimney breast walls.</p>
+      </div>
+      <div class="solution-card">
+        <div class="icon">🏠</div>
+        <h5>Extractor Fan Upgrades</h5>
+        <p>Humidity-sensing fans in kitchens and bathrooms activate automatically when moisture rises — far more effective than timer-controlled units. Our report will specify where these are needed.</p>
+      </div>
+      <div class="solution-card">
+        <div class="icon">🧪</div>
+        <h5>Anti-Mould Treatment</h5>
+        <p>A biocidal wash kills existing mould colonies before an anti-mould coating is applied. This addresses the symptom while ventilation improvements tackle the underlying cause.</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h4>Simple Things Homeowners Can Do Right Now</h4>
+      <p>While awaiting a survey or remedial works: always use extractor fans when cooking or showering; dry clothes outside or in a vented tumble dryer; keep a small gap behind furniture against external walls; open windows briefly each morning to flush overnight humid air. These won't fix a serious condensation problem alone — but they reduce the severity while the right solution is put in place.</p>
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-cta">
+      <h4>Black Mould in Your Home?</h4>
+      <p>We'll diagnose the exact cause and provide a permanent solution — not just mould cleaning.</p>
+      <a href="index2.html#contact">Book a Survey</a>
+      <a href="tel:01213456789" class="phone">0121 345 6789</a>
+    </div>
+    <div class="sidebar-card">
+      <h4>Quick Facts</h4>
+      <ul class="sidebar-facts">
+        <li><span class="label">Most common in</span><span class="value">All property types</span></li>
+        <li><span class="label">Pattern</span><span class="value">Worse in winter</span></li>
+        <li><span class="label">Cause</span><span class="value">High humidity + cold surfaces</span></li>
+        <li><span class="label">Typical remedy</span><span class="value">PIV / ventilation</span></li>
+        <li><span class="label">Report turnaround</span><span class="value">Within 48 hrs</span></li>
+        <li><span class="label">We carry out works?</span><span class="value">No — survey only</span></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h4>Other Types of Damp</h4>
+      <ul class="sidebar-links">
+        <li><a href="rising-damp.html">→ Rising Damp</a></li>
+        <li><a href="penetrating-damp.html">→ Penetrating Damp</a></li>
+        <li><a href="index2.html#services">→ All Our Services</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<div class="related-section">
+  <div class="related-inner">
+    <h2 style="font-family:'Manrope',sans-serif;font-weight:900;color:var(--navy);font-size:1.6rem;margin-bottom:8px;">Other Types of Damp</h2>
+    <p style="color:var(--gray-600);font-size:.93rem;">Think it could be a different problem? Read the other guides.</p>
+    <div class="related-grid">
+      <a href="rising-damp.html" class="related-card">
+        <div style="height:180px;overflow:hidden;flex-shrink:0;">
+          <img src="rising damp.jpg" alt="Rising damp" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </div>
+        <div class="related-body"><h4>Rising Damp</h4><p>Groundwater travelling upward through masonry when the damp proof course has failed or is absent.</p><span class="link">Read the guide →</span></div>
+      </a>
+      <a href="penetrating-damp.html" class="related-card">
+        <div style="height:180px;overflow:hidden;flex-shrink:0;">
+          <img src="damp rear .webp" alt="Penetrating damp" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </div>
+        <div class="related-body"><h4>Penetrating Damp</h4><p>Water entering through defects in the building — failed pointing, cracked render, blocked gutters or faulty flashings.</p><span class="link">Read the guide →</span></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Damp Specialist · PCA Member · CSTDB Qualified · Independent Survey Reports · <a href="index2.html" style="color:var(--orange);text-decoration:none;">Back to Home</a></p>
+</footer>
+</body>
+</html>
