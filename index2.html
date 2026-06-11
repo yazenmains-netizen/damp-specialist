@@ -1139,17 +1139,34 @@ END ARCHIVE -->
     .catch(() => {
       btn.textContent = 'Something went wrong — please call us';
       btn.style.background = '#dc2626';
-      setTimeout(() => { btn.textContent = 'Get My Free Survey →'; btn.style.background = ''; btn.disabled = false; }, 5000);
+      setTimeout(() => { btn.textContent = 'Book My Survey →'; btn.style.background = ''; btn.disabled = false; }, 5000);
     });
   });
 
   /* ── Contact form ── */
-  document.getElementById('contact-form').addEventListener('submit', e => {
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.btn-submit');
-    btn.textContent = '✓ Request Sent — We\'ll Call You Shortly!';
-    btn.style.background = '#16a34a';
-    setTimeout(() => { btn.textContent = 'Book My Survey →'; btn.style.background = ''; }, 5000);
+    const btn  = this.querySelector('.btn-submit');
+    const data = Object.fromEntries(new FormData(this).entries());
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    fetch(MODAL_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(r => r.ok ? r.text() : Promise.reject())
+    .then(() => {
+      btn.textContent = '✓ Request Sent — We\'ll Call You Shortly!';
+      btn.style.background = '#16a34a';
+      setTimeout(() => { btn.textContent = 'Book My Survey →'; btn.style.background = ''; btn.disabled = false; }, 5000);
+    })
+    .catch(() => {
+      btn.textContent = 'Something went wrong — please call us';
+      btn.style.background = '#dc2626';
+      setTimeout(() => { btn.textContent = 'Book My Survey →'; btn.style.background = ''; btn.disabled = false; }, 5000);
+    });
   });
 
   /* ── Mobile nav ── */
