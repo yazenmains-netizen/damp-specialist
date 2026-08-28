@@ -1014,15 +1014,15 @@ END ARCHIVE -->
     <div class="contact-grid reveal">
       <form class="contact-form" id="contact-form">
         <div class="form-row">
-          <div class="field"><label>First Name</label><input type="text" placeholder="John" required /></div>
-          <div class="field"><label>Last Name</label><input type="text" placeholder="Smith" /></div>
+          <div class="field"><label>First Name</label><input type="text" name="first_name" placeholder="John" required /></div>
+          <div class="field"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" /></div>
         </div>
-        <div class="field"><label>Phone Number</label><input type="tel" placeholder="07700 900000" required /></div>
-        <div class="field"><label>Email Address</label><input type="email" placeholder="john@example.com" required /></div>
-        <div class="field"><label>Your Postcode</label><input type="text" placeholder="B1 1AA" /></div>
+        <div class="field"><label>Phone Number</label><input type="tel" name="phone" placeholder="07700 900000" required /></div>
+        <div class="field"><label>Email Address</label><input type="email" name="from_email" placeholder="john@example.com" required /></div>
+        <div class="field"><label>Your Postcode</label><input type="text" name="postcode" placeholder="B1 1AA" /></div>
         <div class="field">
           <label>Type of Damp Problem</label>
-          <select>
+          <select name="damp_type">
             <option value="" disabled selected>Select an option</option>
             <option>Rising Damp</option>
             <option>Penetrating Damp</option>
@@ -1033,7 +1033,7 @@ END ARCHIVE -->
             <option>Not Sure — Need a Survey</option>
           </select>
         </div>
-        <div class="field"><label>Tell Us More (optional)</label><textarea placeholder="Briefly describe the problem, which room it's in, how long you've noticed it..."></textarea></div>
+        <div class="field"><label>Tell Us More (optional)</label><textarea name="message" placeholder="Briefly describe the problem, which room it's in, how long you've noticed it..."></textarea></div>
         <button type="submit" class="btn-submit">Book My Survey →</button>
       </form>
       <div class="contact-info">
@@ -1115,7 +1115,7 @@ END ARCHIVE -->
   });
 
   /* ── Hero quote form ── */
-  const MODAL_URL = 'https://hook.eu1.make.com/ramue9mnhlolqjk4qqm6gvc1e4x7lhpw';
+  const MODAL_URL = 'https://hook.eu1.make.com/kans3opj579dihdw7wu4wxedry2ux20q';
   document.getElementById('hero-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const btn  = this.querySelector('.btn-hf-submit');
@@ -1148,6 +1148,7 @@ END ARCHIVE -->
     e.preventDefault();
     const btn  = this.querySelector('.btn-submit');
     const data = Object.fromEntries(new FormData(this).entries());
+    data.from_name = [data.first_name, data.last_name].filter(Boolean).join(' ').trim();
     btn.textContent = 'Sending…';
     btn.disabled = true;
 
